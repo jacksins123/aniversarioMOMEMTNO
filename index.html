@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Coletor de Aniversários</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="date"] {
+        width: 200px;
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .success-message {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        border-radius: 3px;
+        color: #155724;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Coletor de Aniversários</h1>
+    <form>
+      <label for="data-nascimento">Data de Nascimento:</label>
+      <input type="date" id="data-nascimento">
+      <button type="button" id="btn-coletar">Coletar</button>
+    </form>
+    <div id="mensagem-sucesso" class="success-message" style="display: none;">
+      Aniversário coletado com sucesso!
+    </div>
+    <script>
+      const btnColetar = document.getElementById('btn-coletar');
+      const mensagemSucesso = document.getElementById('mensagem-sucesso');
+
+      btnColetar.addEventListener('click', () => {
+        const dataNascimento = document.getElementById('data-nascimento').value;
+        if (dataNascimento) {
+          mensagemSucesso.style.display = 'block';
+        }
+      });
+    </script>
+  </body>
+</html>
